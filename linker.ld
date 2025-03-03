@@ -2,11 +2,10 @@ ENTRY(_start)
  
 SECTIONS
 {
-    . = 0x8000;
+    . = 0x80000;
     .text :
     {
         *(.text._start)
-        /* KEEP(*(.text.boot)) */
         *(.text)
     }
     . = ALIGN(4096);
@@ -25,10 +24,6 @@ SECTIONS
     {
         bss = .;
         *(.bss)
-    }
-    .ARM.exidx :
-    {
-        *(.ARM.exidx)
     }
     . = ALIGN(4096); 
     __bss_end = .;

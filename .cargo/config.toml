@@ -1,3 +1,7 @@
 [build]
-target = "armv7a-none-eabi"
+target = "aarch64-unknown-none"
 rustflags = ["-C", "link-arg=--script=./linker.ld"]
+
+[unstable]
+build-std = ["core", "panic_abort"]
+
